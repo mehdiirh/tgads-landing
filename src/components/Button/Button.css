@@ -1,0 +1,26 @@
+button {
+  border-radius: 25px;
+  border: 1px solid transparent;
+  padding: 0.8em 2.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:active {
+  border-color: #646cff;
+  scale: 98%;
+}
+
+button.fill {
+  background-color: #5961f8;
+}
+
+button.outline {
+  background-color: transparent;
+  border-color: #5961f8;
+  color: #5961f8;
+}
