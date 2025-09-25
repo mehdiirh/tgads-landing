@@ -1,8 +1,8 @@
-import type {ButtonHTMLAttributes} from "react";
+import {Button as ChakraButton, type ButtonProps} from "@chakra-ui/react";
 import "./Button.css"
 
-const Button = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
-  return <button {...props} />
+const Button = (props: ButtonProps) => {
+  return <ChakraButton {...props} />
 };
 
 export default Button;

@@ -1,26 +1,42 @@
 button {
-  border-radius: 25px;
-  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button.btn {
+  border-radius: 50px;
+  border: none;
   padding: 0.8em 2.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: bold;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
 }
 
 button:active {
-  border-color: #646cff;
+  border-color: #5227ff;
   scale: 98%;
 }
 
+button.rounded {
+  border-radius: 100%;
+}
+
 button.fill {
-  background-color: #5961f8;
+  background-color: #5227ff;
+  color: #e3e2e2;
 }
 
 button.outline {
   background-color: transparent;
-  border-color: #5961f8;
-  color: #5961f8;
+  border-color: #5227ff;
+  color: #e3e2e2;
+}
+
+button.transparent {
+  background: rgba(255, 255, 255, 0.05);
+  --bg-currentcolor: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e3e2e2;
 }
