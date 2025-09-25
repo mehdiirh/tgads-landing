@@ -2,7 +2,7 @@ import React, {type ReactNode, useCallback, useEffect, useRef, useState} from 'r
 import {gsap} from 'gsap';
 import './MagicBento.css';
 import CountUp from "@/components/third-party/CountUp/CountUp.tsx";
-import GradientText from "@/components/GradiantText/GradientText.tsx";
+import GradientText from "@/components/third-party/GradiantText/GradientText.tsx";
 import {Box, Text} from "@chakra-ui/react";
 
 export interface BentoCardProps {

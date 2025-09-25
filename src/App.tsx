@@ -5,7 +5,7 @@ import {Box, Center, Text, useBreakpointValue} from "@chakra-ui/react";
 import Background from "@/components/Section/Background/Background.tsx";
 import Foreground, {ForegroundContent} from "@/components/Section/Foreground/Foreground.tsx";
 import Button from './components/Button/Button';
-import MagicBento from "@/components/MagicBento/MagicBento.tsx";
+import MagicBento from "@/components/third-party/MagicBento/MagicBento.tsx";
 
 function App() {
   
