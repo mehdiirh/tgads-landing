@@ -1,11 +1,14 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {type ReactNode, useCallback, useEffect, useRef, useState} from 'react';
 import {gsap} from 'gsap';
 import './MagicBento.css';
+import CountUp from "@/components/third-party/CountUp/CountUp.tsx";
+import GradientText from "@/components/GradiantText/GradientText.tsx";
+import {Box, Text} from "@chakra-ui/react";
 
 export interface BentoCardProps {
   color?: string;
-  title?: string;
-  description?: string;
+  title?: string | ReactNode;
+  description?: string | ReactNode;
   label?: string;
   textAutoHide?: boolean;
   disableAnimations?: boolean;
@@ -30,29 +33,42 @@ const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = '132, 0, 255';
 const MOBILE_BREAKPOINT = 768;
 
+const TITLE_COLORS = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]
+
+const Counter = (
+  {
+    to, fontSize = "3.2rem"
+  }: {
+    to: number, fontSize?: number | string
+  }
+) => {
+  return (
+    <Box as={GradientText} colors={TITLE_COLORS} margin="unset" fontSize={fontSize} fontWeight="bold">
+      <Box as={CountUp} to={to} separator=","/>
+    </Box>
+  )
+}
+
+
 const cardData: BentoCardProps[] = [
   {
-    label: '1',
-    title: 'Analytics',
-    description: 'Track user behavior',
+    title: <Counter to={10200}/>,
+    description: <Text fontSize="2.2rem">Users</Text>,
   },
   {
-    label: '2',
-    title: 'Dashboard',
-    description: 'Centralized data view',
+    title: <Counter to={16000}/>,
+    description: <Text fontSize="2.2rem">Submitted ads </Text>,
+  },
+  {
+    title: <Counter to={100_500_000} fontSize="2.5rem"/>,
+    description: <Text fontSize="2.2rem">Clicks</Text>
+  },
+  {
+    label: "TEST",
+    title: <Counter to={100_500_000} fontSize="2.5rem"/>,
+    description: <Text fontSize="2.2rem">Views</Text>,
     textAutoHide: true,
   },
-  {
-    label: '3',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    textAutoHide: true,
-  },
-  {
-    label: '4',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-  }
 ];
 
 const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLOW_COLOR): HTMLDivElement => {
