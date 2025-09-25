@@ -53,7 +53,7 @@ function App() {
       {/*SECTION ONE END*/}
       
       {/*SECTION TWO START*/}
-      <Box as={Background} ref={sectionTwo} className="h-full section-one">
+      <Box as={Background} ref={sectionTwo} className="h-full section-two">
         <Center className="gap-10">
           <MagicBento
             textAutoHide={true}
