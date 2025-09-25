@@ -13,7 +13,7 @@ button.btn {
   background-color: #1a1a1a;
 }
 
-button:active {
+button:active:not(:disabled) {
   border-color: #5227ff;
   scale: 98%;
 }
@@ -27,9 +27,13 @@ button.fill {
   color: #e3e2e2;
 }
 
+button.fill:hover {
+  background-color: #2d0abb !important;
+}
+
 button.outline {
   background-color: transparent;
-  border-color: #5227ff;
+  border: 2px solid #5227ff;
   color: #e3e2e2;
 }
 
